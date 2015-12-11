@@ -29,7 +29,7 @@ namespace Karo_Client
 
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
-            _client = new Client();
+            _client = Client.GetInstance();
             _client.Form = this;
             _client.Connect("localhost", 9999);
         }
@@ -57,6 +57,11 @@ namespace Karo_Client
                 txtUsername.Enabled = txtPassword.Enabled = pEn;
                 btnLogin.Enabled = btnRegister.Enabled = pEn;
             }
+        }
+        5
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            _client.CommandLogin();
         }
     }
 }

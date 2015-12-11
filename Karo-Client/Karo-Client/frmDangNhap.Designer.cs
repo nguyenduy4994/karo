@@ -84,6 +84,7 @@
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnRegister
             // 
@@ -137,11 +138,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label lblStatus;
+        public System.Windows.Forms.TextBox txtUsername;
+        public System.Windows.Forms.TextBox txtPassword;
     }
 }
 

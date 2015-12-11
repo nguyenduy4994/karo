@@ -14,6 +14,14 @@ namespace Karo_Client
 {
     public class Client
     {
+        static Client Instance;
+        public static Client GetInstance()
+        {
+            if (Instance == null)
+                Instance = new Client();
+            return Instance;
+        }
+
         public TcpClient TCPClient;
         NetworkStream _NS;
         StreamReader _SR;
@@ -78,17 +86,35 @@ namespace Karo_Client
                         case "quit":
                             CommandQuit();
                             break;
+                        case "password_please":
+                            respone = CommandPassword();
+                            break;
+                        case "logged":
+                            CommandLogged();
+                            break;
                     }
 
                     if (command == "quit") return;
 
-                    WriteLine(command);
+                    if(respone != string.Empty)
+                        WriteLine(respone);
                 }
             }
             catch (Exception ex)
             {
-
+                Form.SetStatus(ex.Message);
+                Form.EnableLogin(false);
             }
+        }
+
+        private void CommandLogged()
+        {
+            MessageBox.Show("dang nhap thanh cong");
+        }
+
+        private string CommandPassword()
+        {
+            return "pass " + Form.txtPassword.Text;
         }
 
         private void CommandQuit()
@@ -99,6 +125,11 @@ namespace Karo_Client
             TCPClient.Close();
             Form.SetStatus("Disconnected");
             Form.EnableLogin(false);
+        }
+
+        public void CommandLogin()
+        {
+            WriteLine("login " + Form.txtUsername.Text);
         }
     }
 }

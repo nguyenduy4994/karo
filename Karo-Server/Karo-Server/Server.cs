@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using System.Threading;
 
 namespace Karo_Server
 {
@@ -32,6 +33,8 @@ namespace Karo_Server
             client.Form = this.Form;
             Clients.Add(client);
             Form.SetLog("Client " + client.TCPClient.Client.RemoteEndPoint.ToString() + " connected");
+
+            ThreadPool.QueueUserWorkItem(client.HandleRequest);
         }
 
         public void Close()
