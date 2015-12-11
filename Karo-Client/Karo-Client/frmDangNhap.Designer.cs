@@ -32,8 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +61,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Enabled = false;
             this.txtUsername.Location = new System.Drawing.Point(485, 180);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(256, 35);
@@ -67,28 +69,42 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Enabled = false;
             this.txtPassword.Location = new System.Drawing.Point(485, 231);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(256, 35);
             this.txtPassword.TabIndex = 1;
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.Location = new System.Drawing.Point(485, 282);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 38);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogin.Enabled = false;
+            this.btnLogin.Location = new System.Drawing.Point(485, 282);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(115, 38);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRegister
             // 
-            this.button2.Location = new System.Drawing.Point(606, 282);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 38);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Register";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRegister.Enabled = false;
+            this.btnRegister.Location = new System.Drawing.Point(606, 282);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(135, 38);
+            this.btnRegister.TabIndex = 2;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.ForeColor = System.Drawing.Color.Black;
+            this.lblStatus.Location = new System.Drawing.Point(538, 522);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(234, 30);
+            this.lblStatus.TabIndex = 3;
+            this.lblStatus.Text = "* Connecting to server ...";
             // 
             // frmDangNhap
             // 
@@ -96,8 +112,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Karo_Client.Properties.Resources.level_background_for_a_mobile_game__by_bvigec_d5vi8b01;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
@@ -110,6 +127,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "frmDangNhap";
             this.Text = "Karo";
+            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,8 +139,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
 

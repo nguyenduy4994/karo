@@ -28,21 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lsvClients = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtLog = new System.Windows.Forms.TextBox();
+            this.toolClose = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lsvClients
-            // 
-            this.lsvClients.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lsvClients.Location = new System.Drawing.Point(0, 24);
-            this.lsvClients.Name = "lsvClients";
-            this.lsvClients.Size = new System.Drawing.Size(726, 429);
-            this.lsvClients.TabIndex = 0;
-            this.lsvClients.UseCompatibleStateImageBehavior = false;
             // 
             // menuStrip1
             // 
@@ -57,7 +49,8 @@
             // clientToolStripMenuItem
             // 
             this.clientToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thôngTinClientToolStripMenuItem});
+            this.thôngTinClientToolStripMenuItem,
+            this.toolClose});
             this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
             this.clientToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.clientToolStripMenuItem.Text = "Client";
@@ -68,16 +61,33 @@
             this.thôngTinClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.thôngTinClientToolStripMenuItem.Text = "Infomation...";
             // 
+            // txtLog
+            // 
+            this.txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLog.Location = new System.Drawing.Point(0, 24);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.Size = new System.Drawing.Size(726, 429);
+            this.txtLog.TabIndex = 2;
+            // 
+            // toolClose
+            // 
+            this.toolClose.Name = "toolClose";
+            this.toolClose.Size = new System.Drawing.Size(152, 22);
+            this.toolClose.Text = "Close";
+            this.toolClose.Click += new System.EventHandler(this.toolClose_Click);
+            // 
             // frmServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 453);
-            this.Controls.Add(this.lsvClients);
+            this.Controls.Add(this.txtLog);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmServer";
             this.Text = "Karo Online Server";
+            this.Load += new System.EventHandler(this.frmServer_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -87,10 +97,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView lsvClients;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinClientToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.ToolStripMenuItem toolClose;
 
     }
 }
